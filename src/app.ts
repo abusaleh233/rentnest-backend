@@ -14,7 +14,11 @@ import adminRoutes from './modules/admin/admin.route';
 
 const app: Application = express();
 
-app.use(cors({ origin: '*', credentials: true }));
+app.use(cors({ 
+  origin: '*', 
+  credentials: true
+ }));
+ 
 app.use(cookieParser());
 app.use(express.json());
 app.use(morgan('dev'));

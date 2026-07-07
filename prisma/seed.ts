@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 async function main() {
   console.log('🌱 Seeding database started...');
 
-  // ১. আগের পুরানো ডেটা ক্লিন করা (Optional কিন্তু সেফটি প্র্যাকটিস)
+  
   await prisma.review.deleteMany();
   await prisma.payment.deleteMany();
   await prisma.rentalRequest.deleteMany();
@@ -14,13 +14,13 @@ async function main() {
   await prisma.category.deleteMany();
   await prisma.user.deleteMany();
 
-  // ২. পাসওয়ার্ড হ্যাশ করার জন্য সল্ট রাউন্ড
+  
   const saltRounds = 10;
   const adminPassword = await bcrypt.hash('admin123', saltRounds);
   const landlordPassword = await bcrypt.hash('landlord123', saltRounds);
   const tenantPassword = await bcrypt.hash('tenant123', saltRounds);
 
-  // ৩. ৩টি ফিক্সড রোলের জন্য ৩জন ডিফল্ট ইউজার তৈরি
+ 
   console.log('👤 Creating default users...');
   
   const admin = await prisma.user.create({
@@ -28,7 +28,7 @@ async function main() {
       name: 'Main Admin',
       email: 'admin@rentnest.com',
       password: adminPassword,
-      role: 'ADMIN', // আপনার এনাম অনুযায়ী ADMIN/USER/OWNER মিলিয়ে নেবেন
+      role: 'ADMIN', 
     },
   });
 
@@ -50,7 +50,7 @@ async function main() {
     },
   });
 
-  // ৪. কিছু ডিফল্ট ক্যাটাগরি তৈরি
+  
   console.log('🗂️ Creating property categories...');
   
   const apartment = await prisma.category.create({
@@ -65,7 +65,7 @@ async function main() {
     data: { name: 'Studio Room', slug: 'studio-room', description: 'Compact studio rooms for bachelors' },
   });
 
-  // ৫. ডেমো হিসেবে একটি প্রোপার্টি লিস্টিং তৈরি (টেস্টিং সহজ করার জন্য)
+  
   console.log('🏠 Creating a sample property listing...');
   
   await prisma.property.create({
