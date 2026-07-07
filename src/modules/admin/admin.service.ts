@@ -33,7 +33,7 @@ const getAllRentalsForAdmin = async () => {
   });
 };
 
-// বোনাস ফিচার: প্ল্যাটফর্ম মডারেশন (ইউজার ডিলিট/ব্যান লজিক)
+
 const deleteUserByAdmin = async (userId: string) => {
   return await prisma.user.delete({
     where: { id: userId },
