@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import catchAsync from '../utils/catchAsync';
+import catchAsync from '../utils/catchAsync.js';
+
 
 const auth = (...roles: string[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
@@ -16,7 +17,7 @@ const auth = (...roles: string[]) => {
       return;
     }
 
-    req.user = decoded;
+    
     next();
   });
 };
