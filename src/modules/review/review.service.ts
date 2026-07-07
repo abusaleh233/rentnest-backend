@@ -4,12 +4,12 @@ import ApiError from '../../errors/ApiError';
 import { IReviewData } from './review.interface';
 
 const createReview = async (userId: string, payload: IReviewData) => {
-  // চেক করা হচ্ছে আসলেই ইউজার এই প্রোপার্টিটি আগে রেন্ট করেছিল কিনা (Completed Rental)
+  
   const hasCompletedRental = await prisma.rentalRequest.findFirst({
     where: {
       userId,
       propertyId: payload.propertyId,
-      status: 'APPROVED', // অথবা আপনার এনাম অনুযায়ী COMPLETED/ACTIVE ট্র্যাকিং
+      status: 'APPROVED', 
     },
   });
 
