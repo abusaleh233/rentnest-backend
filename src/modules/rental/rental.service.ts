@@ -26,14 +26,14 @@ const createRentalRequest = async (userId: string, payload: IRentalRequestData) 
 
 const getMyRentals = async (userId: string, role: string) => {
   if (role === 'OWNER') {
-    // Landlord বা Owner তার প্রোপার্টির রিকোয়েস্টগুলো দেখবে
+    
     return await prisma.rentalRequest.findMany({
       where: { property: { ownerId: userId } },
       include: { user: { select: { name: true, email: true } }, property: true },
     });
   }
   
-  // Tenant বা সাধারণ ইউজার নিজের করা রিকোয়েস্ট দেখবে
+  
   return await prisma.rentalRequest.findMany({
     where: { userId },
     include: { property: true },
