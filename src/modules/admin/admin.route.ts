@@ -4,7 +4,7 @@ import auth from '../../middlewares/auth';
 
 const router = express.Router();
 
-// সমস্ত রুট শুধুমাত্র ADMIN রোলের জন্য প্রোটেক্টেড থাকবে
+
 router.get('/users', auth('ADMIN'), AdminController.getAllUsers);
 router.get('/properties', auth('ADMIN'), AdminController.getAllProperties);
 router.get('/rentals', auth('ADMIN'), AdminController.getAllRentals);
