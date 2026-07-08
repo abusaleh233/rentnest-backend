@@ -2,13 +2,24 @@ import bcrypt from 'bcrypt';
 import config from '../../config';
 import { prisma } from '../../lib/prisma';
 import { IUserFilterRequest } from './user.interface';
+import { Role } from '../../../generated/prisma/enums';
 
 const registerUser = async (payload: any) => {
   const hashedPassword = await bcrypt.hash(payload.password, Number(config.bcrypt_salt_rounds));
+  
+ 
   payload.password = hashedPassword;
 
+ 
+  const userData = {
+    name: payload.name,
+    email: payload.email,
+    password: payload.password,
+    role: Role.USER 
+  };
+
   const result = await prisma.user.create({
-    data: payload,
+    data: userData, 
     select: { id: true, name: true, email: true, role: true, createdAt: true },
   });
   return result;

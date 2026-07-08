@@ -25,7 +25,7 @@ https://your-live-api-url.com
 # 📂 Backend Repository
 
 ```
-https://github.com/your-username/rentnest-backend
+https://github.com/abusaleh233/rentnest-backend.git
 ```
 
 ---
