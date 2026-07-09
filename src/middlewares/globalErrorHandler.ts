@@ -2,6 +2,9 @@ import { ErrorRequestHandler } from 'express';
 import { ZodError } from 'zod';
 
 const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
+  console.error('ERROR =>', err);
+
+
   let statusCode = err.statusCode || 500;
   let message = err.message || 'Something went wrong!';
   let errorDetails = err || {};

@@ -51,8 +51,27 @@ const getPropertyDetails = async (id: string) => {
   });
 };
 
+// --- এই ২টি ফাংশন সার্ভিস ফাইলে মিসিং ছিল ---
+const updateProperty = async (id: string, payload: Partial<any>) => {
+  const result = await prisma.property.update({
+    where: { id },
+    data: payload,
+  });
+  return result;
+};
+
+const deleteProperty = async (id: string) => {
+  const result = await prisma.property.delete({
+    where: { id },
+  });
+  return result;
+};
+
+// এখানেও ফাংশন দুটি এক্সপোর্ট করা নিশ্চিত করুন
 export const PropertyService = {
   createProperty,
   getAllProperties,
   getPropertyDetails,
+  updateProperty, // এখানে যোগ করা হলো
+  deleteProperty, // এখানে যোগ করা হলো
 };

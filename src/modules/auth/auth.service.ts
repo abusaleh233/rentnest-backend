@@ -26,8 +26,8 @@ const loginUser = async (payload: any): Promise<ILoginUserResponse> => {
 
   const accessToken = JwtHelpers.generateToken(
     { id: isUserExist.id, role: isUserExist.role },
-    config.jwt.secret,
-    config.jwt.expires_in
+    config.jwt.access_secret,
+    config.jwt.access_expires_in
   );
 
   return { accessToken };

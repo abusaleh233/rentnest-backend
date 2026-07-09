@@ -28,7 +28,7 @@ const getPropertyDetails = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id as string;
   
   if (!id) {
-    throw new Error('User ID is required');
+    throw new Error('Property ID is required');
   }
   const result = await PropertyService.getPropertyDetails(id);
   sendResponse(res, {
@@ -39,8 +39,35 @@ const getPropertyDetails = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+// --- নতুন যোগ করা হয়েছে ---
+const updateProperty = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const result = await PropertyService.updateProperty(id as string, req.body);
+  
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Property updated successfully',
+    data: result,
+  });
+});
+
+const deleteProperty = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const result = await PropertyService.deleteProperty(id as string);
+  
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Property deleted successfully',
+    data: result,
+  });
+});
+
 export const PropertyController = {
   createProperty,
   getAllProperties,
   getPropertyDetails,
+  updateProperty, // এক্সপোর্ট করা হলো
+  deleteProperty, // এক্সপোর্ট করা হলো
 };

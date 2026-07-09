@@ -14,4 +14,6 @@ const loginValidation = z.object({
 
 router.post('/login', validateRequest(loginValidation), AuthController.loginUser);
 
+
+
 export default router;

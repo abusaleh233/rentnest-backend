@@ -20,4 +20,14 @@ router.post('/', auth('OWNER', 'ADMIN'), validateRequest(propertyValidation), Pr
 router.get('/', PropertyController.getAllProperties);
 router.get('/:id', PropertyController.getPropertyDetails);
 
+router.put('/:id',auth('OWNER', 'ADMIN'),PropertyController.updateProperty);
+
+router.delete('/:id', auth('OWNER', 'ADMIN'), PropertyController.deleteProperty);
+router.put('/:id', (req, res) => {
+  res.json({
+    success: true,
+    message: 'PUT Route Working',
+  });
+});
+
 export default router;
