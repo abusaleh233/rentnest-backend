@@ -4,9 +4,11 @@ import config from '../../config';
 import { prisma } from '../../lib/prisma';
 import ApiError from '../../errors/ApiError';
 
-const stripe = new Stripe(config.stripe.secret_key as string, {
-  apiVersion: '2025-01-27' as any, 
-});
+// const stripe = new Stripe(config.stripe.secret_key as string, {
+//   apiVersion: '2025-01-27' as any, 
+// });
+
+const stripe = new Stripe(config.stripe.secret_key as string);
 
 const createPaymentIntent = async (userId: string, rentalRequestId: string) => {
   const rentalRequest = await prisma.rentalRequest.findUnique({

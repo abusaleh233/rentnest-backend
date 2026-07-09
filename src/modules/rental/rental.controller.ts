@@ -40,8 +40,20 @@ const updateRequestStatus = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getSingleRental = catchAsync(async (req: Request, res: Response) => {
+  const result = await RentalService.getSingleRental(req.params.id as string);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Rental retrieved successfully',
+    data: result,
+  });
+});
+
 export const RentalController = {
   createRentalRequest,
   getMyRentals,
+  getSingleRental,
   updateRequestStatus,
 };

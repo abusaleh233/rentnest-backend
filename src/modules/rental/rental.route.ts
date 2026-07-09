@@ -24,5 +24,13 @@ const statusValidation = z.object({
 router.post('/', auth('USER'), validateRequest(rentalValidation), RentalController.createRentalRequest);
 router.get('/', auth('USER', 'OWNER', 'ADMIN'), RentalController.getMyRentals);
 router.patch('/:id/status', auth('OWNER', 'ADMIN'), validateRequest(statusValidation), RentalController.updateRequestStatus);
+router.get('/:id',auth('USER', 'OWNER', 'ADMIN'),RentalController.getSingleRental);
+router.get('/:id', (req, res) => {
+  res.json({
+    success: true,
+    id: req.params.id,
+    message: 'Rental route working',
+  });
+});
 
 export default router;

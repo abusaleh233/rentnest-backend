@@ -47,8 +47,22 @@ const updateRequestStatus = async (id: string, status: 'APPROVED' | 'REJECTED') 
   });
 };
 
+const getSingleRental = async (id: string) => {
+  return await prisma.rentalRequest.findUnique({
+    where: {
+      id,
+    },
+    include: {
+      user: true,
+      property: true,
+      payments: true,
+    },
+  });
+};
+
 export const RentalService = {
   createRentalRequest,
   getMyRentals,
+  getSingleRental,
   updateRequestStatus,
 };
