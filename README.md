@@ -34,6 +34,20 @@ Postman Collection
 https://drive.google.com/file/d/1FSvcmAQ10cjEELDJ3xpq008tkWhJx2DI/view?usp=sharing
 ```
 
+
+# 👨‍💻 Admin Credentials
+
+Email
+
+```
+tareqrahman@gamil.com
+```
+
+Password
+
+```
+123456
+```
 # 🛠️ Tech Stack
 
 * Node.js
@@ -148,70 +162,4 @@ DELETE /api/admin/users/:id
 
 
 
-```bash
-npm install
-```
-
-Create `.env`
-
-```env
-DATABASE_URL=
-
-PORT=5000
-
-JWT_ACCESS_SECRET=
-
-JWT_REFRESH_SECRET=
-
-JWT_ACCESS_EXPIRES_IN=1d
-
-JWT_REFRESH_EXPIRES_IN=7d
-
-BCRYPT_SALT_ROUNDS=10
-
-STRIPE_SECRET_KEY=
-```
-
-
-
-```bash
-npx prisma generate
-
-npx prisma migrate dev
-
-npx prisma studio
-```
-
 ---
-
-# 👨‍💻 Admin Credentials
-
-Email
-
-```
-admin@rentnest.com
-```
-
-Password
-
-```
-admin123
-```
-
----
-
-# 👤 Author
-
-Saleh Ahmad
-
-GitHub
-
-```
-https://github.com/your-github-username
-```
-
----
-
-# 📜 License
-
-This project is developed for educational purposes as part of the Programming Hero Backend Assignment.
