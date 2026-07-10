@@ -1,7 +1,3 @@
-# 🏠 RentNest Backend API
-
-A RESTful backend API for a rental property marketplace built with **Node.js**, **Express.js**, **TypeScript**, **Prisma**, and **PostgreSQL**.
-
 ## 📖 Project Overview
 
 RentNest is a rental property management platform where:
@@ -32,19 +28,13 @@ https://github.com/abusaleh233/rentnest-backend.git
 
 # 📄 API Documentation
 
-Postman Collection / Swagger
+Postman Collection 
 
 ```
-https://your-api-docs-link.com
+https://drive.google.com/file/d/1FSvcmAQ10cjEELDJ3xpq008tkWhJx2DI/view?usp=sharing
 ```
 
----
 
-# 🎥 Demo Video
-
-```
-https://your-demo-video-link.com
-```
 
 ---
 
