@@ -6,12 +6,21 @@ import { z } from 'zod';
 
 const router = express.Router();
 
+// const registerValidation = z.object({
+//   body: z.object({
+//     email: z.string().email(),
+//     name: z.string().min(1, 'Name is required'),
+//     password: z.string().min(6, 'Min 6 characters'),
+//     role: z.enum(['USER', 'ADMIN', 'OWNER']),
+//   }),
+// });
+
 const registerValidation = z.object({
   body: z.object({
     email: z.string().email(),
     name: z.string().min(1, 'Name is required'),
     password: z.string().min(6, 'Min 6 characters'),
-    role: z.enum(['USER', 'ADMIN', 'OWNER']),
+    role: z.enum(['USER', 'ADMIN', 'OWNER']).optional(),
   }),
 });
 

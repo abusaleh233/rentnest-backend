@@ -1,0 +1,227 @@
+all api 
+
+
+post
+http://localhost:5000/api/users/register
+
+{
+  "name": "Khaled bin Oalid",
+  "email": "khaledbinoalid@gamil.com",
+  "password": "123456"
+}
+--------------------------------------------
+post
+admin
+http://localhost:5000/api/auth/login
+{
+  "email": "tareqrahman@gamil.com",
+  "password": "123456"
+}
+-------------------------------------------------
+Get Current User
+get
+http://localhost:5000/api/users/me
+
+Headers: Authorization: 
+Bearer 
+
+
+=================================================
+Create Category
+admin
+post
+
+http://localhost:5000/api/categories
+
+{
+  "name": "Apartment",
+  "slug": "apartment",
+  "description": "Apartment Category"
+}
+
+------------------------------------------------------
+get api
+
+GET 
+http://localhost:5000/api/categories
+
+---------------------------------------
+POST
+
+http://localhost:5000/api/properties
+
+{
+  "title": "Luxury 3BR Apartment",
+  "description": "Fully furnished luxury apartment with beautiful balcony view.",
+  "price": 120000,
+  "location": "Dhaka, Bangladesh",
+  "categoryId": "2675e78d-6547-4944-a9d9-a8964c608538"
+}
+
+Headers: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3NjQyNTRhLTRkYjMtNDQzOC1iMmYwLTM2YzI4MTA5Mjg1YSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc4MzcwMTE0MSwiZXhwIjoxNzgzNzg3NTQxfQ.71DmIjrakig2-tq2uAA2hrLy-w8AaM0JbkXO80ZFA_s
+
+
+==================================================
+get all properties
+
+http://localhost:5000/api/properties
+
+=================================================
+Update Property Listing
+PUT
+
+http://localhost:5000/api/properties/f47eff44-44f7-48ea-878c-4f451481104f
+
+{
+  "price": 6300000,
+  "isAvailable": true
+}
+
+
+
+===============================================
+DELETE Property Listing
+
+DELETE
+
+http://localhost:5000/api/properties/f1870f32-6368-4858-94b7-00202cc4ca6e
+
+------------------------------------------
+get singel api
+
+get
+
+http://localhost:5000/api/properties/f47eff44-44f7-48ea-878c-4f451481104f
+-----------------------------------------------------------------------------
+Create Rental Request user
+POST api
+
+
+
+http://localhost:5000/api/rentals
+
+{
+  "propertyId": "0f3654dd-901a-4e5a-898d-e078519bd6c1",
+  "startDate": "2026-07-15T00:00:00.000Z",
+  "endDate": "2026-12-15T00:00:00.000Z",
+  "totalPrice": 50000
+}
+
+header
+
+Authorization
+
+Bearer 
+=========================================================
+get all Rental
+admin/user/
+
+http://localhost:5000/api/rentals
+header
+
+Authorization
+
+Bearer 
+--------------------------------------------------------
+
+get singel Rental
+admin
+
+http://localhost:5000/api/rentals/7e078382-1fe6-4cc4-9e18-38ea2c60bb11
+
+header
+
+Authorization
+
+Bearer 
+------------------------------------------------------------------
+
+patch singel Rental
+admin
+http://localhost:5000/api/rentals/f836c14a-b89d-4bde-9b42-d9c5a97bcd56/status
+
+{
+  "status": "APPROVED"
+}
+
+------------------------------------------------------------------
+Payment API
+POST
+
+http://localhost:5000/api/payments/create-intent
+
+{
+   "rentalRequestId":"e85a8a9c-3432-492f-8f34-1c027ee7f00c"
+}
+
+
+
+
+
+
+-------------------------------------------------------------------
+
+POST 
+http://localhost:5000/api/payments/confirm
+{
+  "transactionId": "pi_3Tri1KLYMgcNLI760mxk6Rz5",
+  "rentalRequestId": "72fda7de-5f92-43a8-9adf-c0ed566853b2"
+}
+
+
+-------------------------------------------------------------------
+
+payment user
+GET  
+http://localhost:5000/api/payments/history
+
+-----------------------------------------------------------------------
+
+Review APIs
+Create Review user
+POST 
+http://localhost:5000/api/reviews
+{
+   "propertyId":"0f3654dd-901a-4e5a-898d-e078519bd6c1",
+   "rating":5,
+   "comment":"Very nice apartment"
+}
+
+
+
+-----------------------------------------------------
+Property Reviews
+get
+
+http://localhost:5000/api/reviews/property/5b3432b5-4e41-421a-9d19-ffbdac799f84
+
+-----------------------------------------------------------
+admin api
+
+All Users
+GET
+
+http://localhost:5000/api/admin/users
+
+-------------------------------------------------------
+admin api
+
+DELETE 
+http://localhost:5000/api/admin/users/:id
+
+
+-------------------------------------------------
+admin api
+
+All Properties
+GET 
+http://localhost:5000/api/admin/properties
+
+--------------------------------------------------
+admin api
+
+All Rentals
+GET 
+http://localhost:5000/api/admin/rentals
+
+-------------------------------------------------------
