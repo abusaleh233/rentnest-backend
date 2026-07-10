@@ -34,10 +34,6 @@ Postman Collection
 https://drive.google.com/file/d/1FSvcmAQ10cjEELDJ3xpq008tkWhJx2DI/view?usp=sharing
 ```
 
-
-
----
-
 # 🛠️ Tech Stack
 
 * Node.js
@@ -101,161 +97,56 @@ https://drive.google.com/file/d/1FSvcmAQ10cjEELDJ3xpq008tkWhJx2DI/view?usp=shari
 
 # 📦 API Endpoints
 
-## Authentication
+Authentication
+--------------
+POST /api/users/register
+POST /api/auth/login
+GET  /api/users/me
 
-```
-POST   /api/auth/register
-POST   /api/auth/login
-GET    /api/auth/me
-```
+Categories
+--------------
+POST /api/categories
+GET  /api/categories
 
----
-
-## Properties
-
-```
+Properties
+--------------
+POST   /api/properties
 GET    /api/properties
 GET    /api/properties/:id
-POST   /api/properties
-PATCH  /api/properties/:id
+PUT    /api/properties/:id
 DELETE /api/properties/:id
-```
 
----
+Rentals
+--------------
+POST /api/rentals
+GET  /api/rentals
+GET  /api/rentals/:id
 
-## Categories
+Landlord
+--------------
+GET   /api/landlord/requests
+PATCH /api/landlord/requests/:id
 
-```
-GET    /api/categories
-POST   /api/categories
-PATCH  /api/categories/:id
-DELETE /api/categories/:id
-```
+Payments
+--------------
+POST /api/payments/create-intent
+POST /api/payments/confirm
+GET  /api/payments/history
 
----
+Reviews
+--------------
+POST /api/reviews
+GET  /api/reviews/property/:propertyId
 
-## Rental Requests
-
-```
-POST   /api/rentals
-GET    /api/rentals
-GET    /api/rentals/:id
-PATCH  /api/rentals/:id
-```
-
----
-
-## Payments
-
-```
-POST   /api/payments/create-intent
-POST   /api/payments/confirm
-GET    /api/payments/history
-```
-
----
-
-## Reviews
-
-```
-POST   /api/reviews
-GET    /api/reviews
-```
-
----
-
-## Admin
-
-```
+Admin
+--------------
 GET    /api/admin/users
-PATCH  /api/admin/users/:id
 GET    /api/admin/properties
 GET    /api/admin/rentals
-```
-
+DELETE /api/admin/users/:id
 ---
 
-# 🔐 User Roles
 
-### Tenant
-
-* Browse Properties
-* Submit Rental Requests
-* Make Payments
-* Leave Reviews
-
-### Landlord
-
-* Manage Properties
-* Approve Rental Requests
-* Reject Rental Requests
-
-### Admin
-
-* Manage Users
-* Manage Categories
-* View All Listings
-* View All Rental Requests
-
----
-
-# 💳 Payment Gateway
-
-Stripe Payment Integration
-
-* Create Payment Intent
-* Confirm Payment
-* Payment History
-* Payment Status Tracking
-
----
-
-# 📁 Project Structure
-
-```
-src
-│
-├── app
-│
-├── config
-│
-├── errors
-│
-├── interfaces
-│
-├── lib
-│
-├── middlewares
-│
-├── modules
-│   ├── auth
-│   ├── user
-│   ├── property
-│   ├── category
-│   ├── rental
-│   ├── payment
-│   ├── review
-│   └── admin
-│
-├── routes
-│
-├── utils
-│
-├── app.ts
-└── server.ts
-```
-
----
-
-# ⚙️ Installation
-
-Clone the repository
-
-```bash
-git clone https://github.com/your-username/rentnest-backend.git
-```
-
-Install dependencies
 
 ```bash
 npm install
@@ -281,29 +172,7 @@ BCRYPT_SALT_ROUNDS=10
 STRIPE_SECRET_KEY=
 ```
 
-Run Development Server
 
-```bash
-npm run dev
-```
-
-Build Project
-
-```bash
-npm run build
-```
-
-Start Production
-
-```bash
-npm start
-```
-
----
-
-# 🗄️ Database
-
-Prisma ORM with PostgreSQL
 
 ```bash
 npx prisma generate
