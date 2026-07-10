@@ -111,55 +111,54 @@ Password
 
 # 📦 API Endpoints
 
-Authentication
+📦Authentication
 --------------
-POST /api/users/register
-POST /api/auth/login
-GET  /api/users/me
+#POST /api/users/register
+#POST /api/auth/login
+#GET  /api/users/me
 
-Categories
+📦Categories
 --------------
-POST /api/categories
-GET  /api/categories
+#POST /api/categories
+#GET  /api/categories
 
-Properties
+📦Properties
 --------------
-POST   /api/properties
-GET    /api/properties
-GET    /api/properties/:id
-PUT    /api/properties/:id
-DELETE /api/properties/:id
+#POST   /api/properties
+#GET    /api/properties
+#GET    /api/properties/:id
+#PUT    /api/properties/:id
+#DELETE /api/properties/:id
 
-Rentals
+📦Rentals
 --------------
-POST /api/rentals
-GET  /api/rentals
-GET  /api/rentals/:id
+#POST /api/rentals
+#GET  /api/rentals
+#GET  /api/rentals/:id
 
-Landlord
+📦Landlord
 --------------
-GET   /api/landlord/requests
-PATCH /api/landlord/requests/:id
+#GET   /api/landlord/requests
+#PATCH /api/landlord/requests/:id
 
-Payments
+📦Payments
 --------------
-POST /api/payments/create-intent
-POST /api/payments/confirm
-GET  /api/payments/history
+#POST /api/payments/create-intent
+#POST /api/payments/confirm
+#GET  /api/payments/history
 
-Reviews
+📦Reviews
 --------------
-POST /api/reviews
-GET  /api/reviews/property/:propertyId
+#POST /api/reviews
+#GET  /api/reviews/property/:propertyId
 
-Admin
+📦Admin
 --------------
-GET    /api/admin/users
-GET    /api/admin/properties
-GET    /api/admin/rentals
-DELETE /api/admin/users/:id
+#GET    /api/admin/users
+#GET    /api/admin/properties
+#GET    /api/admin/rentals
+#DELETE /api/admin/users/:id
 ---
 
 
 
----
