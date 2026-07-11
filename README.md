@@ -13,7 +13,7 @@ This project is developed as a backend-only REST API.
 # 🚀 Live API
 
 ```
-https://your-live-api-url.com
+https://rentnest-backend-sage.vercel.app/
 ```
 
 ---
@@ -31,7 +31,7 @@ https://github.com/abusaleh233/rentnest-backend.git
 Postman Collection 
 
 ```
-https://drive.google.com/file/d/1FSvcmAQ10cjEELDJ3xpq008tkWhJx2DI/view?usp=sharing
+https://drive.google.com/file/d/1xHExx7DP6ReYCZd2SP8Ju2t5wMD5yAQs/view?usp=sharing
 ```
 
 
